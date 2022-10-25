@@ -1,9 +1,17 @@
-import { MongoClient } from "mongodb";
+import * as pg from "pg";
+const { Pool } = pg.default;
+// const { Pool } = require('pg')
 
-const connectionString = "mongodb://localhost:27017";
+// const pool = new Pool({
+//   connectionString: "postgresql://postgres:1999.8/@localhost:5432/posts",
+// });
 
-export const client = new MongoClient(connectionString, {
-  useUnifiedTopology: true,
+const pool = new Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "posts",
+  password: "1999.8/",
+  port: 5432,
 });
 
-export const db = client.db("practice-mongo");
+export { pool };
