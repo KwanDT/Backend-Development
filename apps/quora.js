@@ -45,7 +45,7 @@ quoraRouter.put("/:questionId", async (req, res) => {
   });
 });
 
-movieRouter.delete("/:questionId", async (req, res) => {
+quoraRouter.delete("/:questionId", async (req, res) => {
   const collection = db.collection("questions");
 
   const questionId = ObjectId(req.params.questionId);
