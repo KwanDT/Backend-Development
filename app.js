@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import postRouter from "./apps/posts.js";
+import postRouter from "/app/post.js";
 
 const init = async () => {
   const app = express();
